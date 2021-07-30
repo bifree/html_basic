@@ -1,0 +1,49 @@
+dt::before {
+  content: 'Q.';
+}
+
+dl > div {
+  margin-bottom: 20px;
+}
+
+dt {
+  position: relative;
+  width: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+
+dd {
+  display: none;
+    width: 50%;
+    margin: 0;
+}
+
+dt::after {
+  content: '+';
+  top: 8px;
+  position: absolute;
+  right: 0;
+  transform: translate(.3s);
+}
+
+dl > div.appear dt::after {
+  transform: rotate(45deg);
+}
+
+dl > div.appear dd {
+  display: block;
+  animation: .3s fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
